@@ -11,14 +11,12 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Extract version
         id: extract-version
         # run: echo "version=$(cat package.json | jq -r '.version')" >> $env:GITHUB_OUTPUT
-        run: echo "version=$(cat package.json | jq -r '.version')"
+        run: echo "version=$(cat package.json | jq -r '.version')" >> "$GITHUB_OUTPUT"
 
-      # - name: Print version
-      #   shell: pwsh
-      #   run: |
-      #     Write-Output "the secret number is ${{ steps.extract-version.outputs.version }}"
+      - name: Print version
+        run: echo steps.extract-version.outputs.version
