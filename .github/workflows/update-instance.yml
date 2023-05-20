@@ -35,4 +35,4 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: vocoront/simple-express-server:testing
+          tags: vocoront/simple-express-server:{{ steps.extract-version.outputs.version }}
