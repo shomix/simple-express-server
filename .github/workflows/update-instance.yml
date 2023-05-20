@@ -36,3 +36,11 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: vocoront/simple-express-server:${{ steps.extract-version.outputs.version }}
+
+      - name: Update instance
+        id: updaing-instance
+        uses: decent-infra/shomix-car-update-action@v1.0
+        with:
+          spheron-token:  ${{ secrets.SPHERON_TOKEN }}
+          instance-id: "6468b83802397f001249bf20"
+          tag: ${{ steps.extract-version.outputs.version }}
