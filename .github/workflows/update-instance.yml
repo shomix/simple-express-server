@@ -17,4 +17,4 @@ jobs:
         run: echo "::set-output name=version::$(cat package.json | jq -r '.version')"
 
       - name: Print version
-        run: echo "Version: ${{ steps.extract_version.outputs.version }}"
+        run: echo "Version:${{ steps.extract_version.outputs.version }}"
