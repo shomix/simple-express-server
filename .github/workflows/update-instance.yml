@@ -42,5 +42,5 @@ jobs:
         uses: decent-infra/shomix-car-update-action@v1.0
         with:
           spheron-token:  ${{ secrets.SPHERON_TOKEN }}
-          instance-id: "6468b83802397f001249bf20"
+          instance-id: "6469132102397f001249ca6c"
           tag: ${{ steps.extract-version.outputs.version }}
